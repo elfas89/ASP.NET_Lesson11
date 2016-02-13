@@ -1,0 +1,47 @@
+﻿
+@{
+    Layout = null;
+}
+
+@using Less_11.Models;
+
+@model User
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+                @using (Html.BeginForm())
+                {
+                    <p>
+                        Имя: @Html.TextBoxFor(m => m.Name)
+                        <br />
+                        Годков: @Html.TextBoxFor(m => m.Age)
+                        <br />
+
+                        МЭ: @Html.RadioButtonFor(m => m.Sex, "male", new { id = "maleRadio" })
+                        ЖО: @Html.RadioButtonFor(m => m.Sex, "female", new { id = "femaleRadio" })
+                        <br />
+
+                        @Html.LabelFor(m => m.Pet, "Есть домашнее животное:")
+                        @Html.CheckBoxFor(m => m.Pet, false)
+                        <br />
+
+                        @Html.DropDownListFor(m => m.Continent, new SelectList(new string[] { "Европа", "Азия", "Австралия" }), "Материк")
+
+                        <br />
+
+
+
+                <input type="submit" />
+            </p>
+        }
+
+    </div>
+</body>
+</html>

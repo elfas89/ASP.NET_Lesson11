@@ -1,0 +1,43 @@
+﻿
+@{
+    Layout = null;
+}
+
+@model List<int>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+
+    @*@helper CreateList(IEnumerable<int> all)
+{
+    <ul>
+        @foreach (int i in all)
+        {
+            <li>@i</li>
+        }
+    </ul>
+}*@
+
+
+
+
+</head>
+<body>
+    <div> 
+        <h3>Список</h3>
+        @*@CreateList(ViewBag.Res)*@
+        @*@CreateList(Model)*@
+    </div>
+
+    <div>
+        @using Less_11.Views.Helpers
+    @*<h3>Города</h3>*@
+    @Html.CreateList(Model)
+        </div>
+
+</body>
+</html>

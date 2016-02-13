@@ -1,0 +1,45 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index нетипизированные хелперы</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm())
+        {
+            <p>
+                Имя: @Html.TextBox("name")                @*?? ("name", (string)ViewBag.Name)*@ 
+                <br />
+                Годков: @Html.TextBox("age")
+                <br />
+
+                МЭ: @Html.RadioButton("sex", "male", new { id = "maleRadio" })
+                ЖО: @Html.RadioButton("sex", "female", new { id = "femaleRadio" })
+                <br />
+
+                @Html.Label("pet", "Есть домашнее животное:")
+                @Html.CheckBox("pet", false)
+                <br />
+
+                @Html.DropDownList("continent", new SelectList(new string[] { "Европа", "Азия", "Австралия" }), "Материк")
+
+                <br />
+
+
+
+                <input type="submit" />
+            </p>
+        }
+
+    </div>
+
+    <div>@ViewBag.Info</div>
+
+</body>
+</html>
